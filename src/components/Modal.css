@@ -1,0 +1,92 @@
+.Container {
+  padding: 10rem;
+}
+
+.myoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.buttonContainer {
+  flex-direction: row;
+  display: flex;
+  margin-left: 12px;
+}
+
+.button {
+  background-color: orange;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 8px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.button:hover {
+  background-color: rgb(168, 113, 11);
+}
+.button-cancel {
+  background-color: #555555;
+}
+.button-cancel:hover {
+  background-color: rgb(44, 44, 43);
+}
+input[type='text'],
+select {
+  width: 100%;
+  padding: 4px 10px;
+  /* margin: 0px 6px; */
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.inputField {
+  margin-bottom: 20px;
+  margin-left: 12px;
+}
+.all {
+  flex-direction: row;
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 12px;
+}
+.all p {
+  font-weight: 500;
+}
+.select {
+  width: 100px;
+  outline: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.numeric {
+  flex-direction: row;
+  display: flex;
+  /* background-color: red; */
+  margin-bottom: 20px;
+  margin-left: 12px;
+}
+
+.numericfield {
+  width: auto;
+  margin-left: 10px;
+}
+.rules {
+  flex-direction: row;
+  display: flex;
+  margin-bottom: 20px;
+  background-color: #ccc;
+}
+.insertparameter {
+  width: 100%;
+}
