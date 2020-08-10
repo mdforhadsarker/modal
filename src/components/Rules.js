@@ -24,9 +24,7 @@ const Rules = ({ add, addTwo, removeTwo }) => {
         />
 
         <input type='submit' onClick={() => add()} className='addrule' value='add rule' />
-      </div>
-
-      
+      </div> 
       <div className='icons'>
         <RemoveCircleOutlineIcon onClick={removeTwo} className='removeicon'/>
         <AddCircleOutlineIcon onClick={addTwo} />
