@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 import './Modal.css';
 import Rules from '../components/Rules';
 import NumericField from '../components/NumericField';
-import RemoveRule from './RemoveRule';
 import RuleTwo from './RuleTwo';
 
 const customStyles = {
@@ -30,18 +29,6 @@ function modalApp() {
   function openModal() {
     setIsOpen(true);
   }
-
-  // remove/add rule state
-  const [isOpenRule, setIsOpenRule] = React.useState(false);
-
-  // add rule handler
-  const addRule = () => {
-    setIsOpenRule(true);
-  };
-  // remove rule handler
-  const removeRule = () => {
-    setIsOpenRule(false);
-  };
 
   // remove/add rule two state
   const [isOpenRuleTwo, setIsOpenRuleTwo] = React.useState(false);
@@ -89,8 +76,8 @@ function modalApp() {
           </select>
           <p>of the below conditions are met</p>
         </div>
-        <Rules add={addRule} addTwo={addRuleTwo} removeTwo={removeRuleTwo} />
-        {isOpenRule && <RemoveRule remove={removeRule} />}
+        <Rules addTwo={addRuleTwo} removeTwo={removeRuleTwo} />
+        
         {isOpenRuleTwo && <RuleTwo remove={removeRuleTwo} />}
         <NumericField />
 

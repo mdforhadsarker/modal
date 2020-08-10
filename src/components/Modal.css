@@ -54,9 +54,9 @@ select {
 }
 
 input[type='submit'] {
-  margin-left: -80px;
-  height: 20px;
-  width: 60px;
+  margin-left: -100px;
+  height: 24px;
+  width: 95px;
   color: rgb(24, 154, 206);
   background: white;
   border: none;
@@ -101,13 +101,18 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
 }
 
 .numericfield {
   width: auto;
-  margin-left: 10px;
+  margin-left: 12px;
 }
 .rules {
   flex-direction: row;
@@ -117,8 +122,12 @@ input[type=number] {
 }
 .insertparameter {
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
+}
+.addrule1 {
+  width: 100%;
+  flex-direction: row;
 }
 .icons {
   display: flex;
@@ -128,4 +137,16 @@ input[type=number] {
 .removeicon {
   color: gray;
   margin-right: 5px;
+}
+.removerule {
+  background-color: #ccc;
+  padding-bottom: 10px;
+}
+.removerule-parameter {
+  width: 100%;
+}
+.selectRules {
+  height: 30px;
+  flex-direction: row;
+  display: flex;
 }

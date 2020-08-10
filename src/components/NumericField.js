@@ -1,5 +1,15 @@
 import React from 'react';
 
+const styles = {
+  container: {
+    color: 'gray',
+    // backgroundColor: 'red',
+    width: '20px',
+    marginLeft: '-25px',
+    marginBottom: '5px',
+    cursor: 'none'
+  }
+};
 const NumericField = () => {
   return (
     <div className='numeric'>
@@ -10,7 +20,12 @@ const NumericField = () => {
         id='quantity'
         name='quantity'
       />
-      <input type='submit' className='percentage' value='%' />
+      <input
+        type='submit'
+        style={styles.container}
+        className='percentage'
+        value='%'
+      />
     </div>
   );
 };
