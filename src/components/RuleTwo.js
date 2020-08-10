@@ -2,8 +2,7 @@ import React from 'react';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
-
-const Rules = ({ add, addTwo, removeTwo }) => {
+const RuleTwo = ({ remove }) => {
   return (
     <div className='rules'>
       <select className='select' name='affsub' id='affsub'>
@@ -23,16 +22,16 @@ const Rules = ({ add, addTwo, removeTwo }) => {
           placeholder='insert parameter'
         />
 
-        <input type='submit' onClick={() => add()} className='addrule' value='add rule' />
+        <input type='submit' className='addrule' value='add rule' />
       </div>
 
       
       <div className='icons'>
-        <RemoveCircleOutlineIcon onClick={removeTwo} className='removeicon'/>
-        <AddCircleOutlineIcon onClick={addTwo} />
+        <RemoveCircleOutlineIcon onClick={remove} className='removeicon'/>
+        <AddCircleOutlineIcon />
       </div>
     </div>
   );
 };
 
-export default Rules;
+export default RuleTwo;

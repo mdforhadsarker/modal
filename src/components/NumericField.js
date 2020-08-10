@@ -10,6 +10,7 @@ const NumericField = () => {
         id='quantity'
         name='quantity'
       />
+      <input type='submit' className='percentage' value='%' />
     </div>
   );
 };

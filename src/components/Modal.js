@@ -4,6 +4,8 @@ import Modal from 'react-modal';
 import './Modal.css';
 import Rules from '../components/Rules';
 import NumericField from '../components/NumericField';
+import RemoveRule from './RemoveRule';
+import RuleTwo from './RuleTwo';
 
 const customStyles = {
   content: {
@@ -28,6 +30,30 @@ function modalApp() {
   function openModal() {
     setIsOpen(true);
   }
+
+  // remove/add rule state
+  const [isOpenRule, setIsOpenRule] = React.useState(false);
+
+  // add rule handler
+  const addRule = () => {
+    setIsOpenRule(true);
+  };
+  // remove rule handler
+  const removeRule = () => {
+    setIsOpenRule(false);
+  };
+
+  // remove/add rule two state
+  const [isOpenRuleTwo, setIsOpenRuleTwo] = React.useState(false);
+
+  // add rule two handler
+  const addRuleTwo = () => {
+    setIsOpenRuleTwo(true);
+  };
+  // remove rule two handler
+  const removeRuleTwo = () => {
+    setIsOpenRuleTwo(false);
+  };
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -63,8 +89,11 @@ function modalApp() {
           </select>
           <p>of the below conditions are met</p>
         </div>
-        <Rules />
+        <Rules add={addRule} addTwo={addRuleTwo} removeTwo={removeRuleTwo} />
+        {isOpenRule && <RemoveRule remove={removeRule} />}
+        {isOpenRuleTwo && <RuleTwo remove={removeRuleTwo} />}
         <NumericField />
+
         <div className='buttonContainer'>
           <button onClick={closeModal} type='button' className='button'>
             Confirm
