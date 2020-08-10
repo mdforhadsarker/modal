@@ -2,9 +2,15 @@
 import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
-import Rules from '../components/Rules';
-import NumericField from '../components/NumericField';
+
+//Components
+
+import Rules from './Rules';
+import NumericField from './NumericField';
 import RuleTwo from './RuleTwo';
+import Button from './Button';
+import ConditionMet from './ConditionMet';
+import InputField from './InputField';
 
 const customStyles = {
   content: {
@@ -54,7 +60,6 @@ function modalApp() {
   return (
     <div className='Container'>
       <button onClick={openModal}>Add Revenue Group</button>
-
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -63,37 +68,12 @@ function modalApp() {
         overlayClassName='myoverlay'
       >
         <h3 ref={_subtitle => (subtitle = _subtitle)}>Add Revenue Group</h3>
-
-        <div className='inputField'>
-          <label for='revenuegrouptitle'>Revenue Group Title</label>
-          <input type='text' id='revenuegrouptitle' name='revenuegrouptitle' />
-        </div>
-        <div className='all'>
-          <p>If</p>
-          <select className='select' name='conditions' id='condition'>
-            <option value='All'>ALL</option>
-            <option value='notall'>Not All</option>
-          </select>
-          <p>of the below conditions are met</p>
-        </div>
+        <InputField />
+        <ConditionMet />
         <Rules addTwo={addRuleTwo} removeTwo={removeRuleTwo} />
-        
         {isOpenRuleTwo && <RuleTwo remove={removeRuleTwo} />}
         <NumericField />
-
-        <div className='buttonContainer'>
-          <button onClick={closeModal} type='button' className='button'>
-            Confirm
-          </button>
-
-          <button
-            onClick={closeModal}
-            type='button'
-            className='button button-cancel'
-          >
-            Cancel
-          </button>
-        </div>
+        <Button closeModal={closeModal} />
       </Modal>
     </div>
   );
